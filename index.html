@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    {{message}}
+  </div>
+
+  <script src="/nue.js"></script>
+  <script>
+    let app = Nue.createApp({
+      data() {
+        return {
+          message: "Hello, Nue!"
+        }
+      },
+      methods: {
+        hello() {
+          return 'Hello, world!'
+        }
+      },
+      watchers: {
+        message() {
+          console.log("'message' was updated")
+        }
+      }
+    })
+
+    app.mount("#app")
+  </script>
+</body>
+
+</html>
